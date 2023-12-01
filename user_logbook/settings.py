@@ -128,3 +128,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': 'postgresql://postgres:33B3b1ac*B-FF5dBg-4CC3556cfDEDaC@monorail.proxy.rlwy.net:29341/railway',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': '33B3b1ac*B-FF5dBg-4CC3556cfDEDaC',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': 29341,
+    }
+}
