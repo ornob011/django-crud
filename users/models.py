@@ -18,7 +18,7 @@ class Child(models.Model):
     """
     Model representing a child user linked to a Parent. Child does not have an address.
     """
-    parent = models.ForeignKey(Parent, on_delete=models.CASCADE, related_name="children")
+    parent = models.ForeignKey(Parent, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
 
