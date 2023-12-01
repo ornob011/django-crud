@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block extra_css %}
+<style>
+    .form-heading {
+        text-align: center;
+        background-color: #28a745;
+        color: white;
+        padding: 10px 0;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container pt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 class="form-heading">{{ parent.id|default:'Create' }} Parent</h3>
+            <form method="post">
+                {% csrf_token %}
+                <!-- {{ form.as_p }} -->
+
+                <div class="mb-2">
+                    <label for="id_first_name" class="form-label">First Name:</label>
+                    <input type="text" class="form-control" name="first_name" id="id_first_name" value="{{ form.first_name.value|default_if_none:'' }}" required>
+                </div>
+
+                <div class="mb-2">
+                    <label for="id_last_name" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" name="last_name" id="id_last_name" value="{{ form.last_name.value|default_if_none:'' }}" required>
+                </div>
+
+                <div class="mb-2">
+                    <label for="id_street" class="form-label">Street:</label>
+                    <input type="text" class="form-control" name="street" id="id_street" value="{{ form.street.value|default_if_none:'' }}" required>
+                </div>
+
+                <div class="mb-2">
+                    <label for="id_city" class="form-label">City:</label>
+                    <input type="text" class="form-control" name="city" id="id_city" value="{{ form.city.value|default_if_none:'' }}" required>
+                </div>
+
+                <div class="mb-2">
+                    <label for="id_state" class="form-label">State:</label>
+                    <input type="text" class="form-control" name="state" id="id_state" value="{{ form.state.value|default_if_none:'' }}" required>
+                </div>
+
+                <div class="mb-2">
+                    <label for="id_zip_code" class="form-label">Zip Code:</label>
+                    <input type="text" class="form-control" name="zip_code" id="id_zip_code" value="{{ form.zip_code.value|default_if_none:'' }}" required>
+                </div>
+
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
