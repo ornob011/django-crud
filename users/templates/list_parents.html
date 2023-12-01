@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Parent List</h2>
-<a href="{% url 'create_parent' %}" class="btn btn-primary">Add New Parent</a>
-<a href="{% url 'list_children' %}" class="btn btn-secondary">View Children</a>
-<table class="table">
-    <thead>
+<div class="my-4">
+    <h2>Parent List</h2>
+    <div class="my-4">
+        <a href="{% url 'create_parent' %}" class="btn btn-info">Add New Parent</a>
+        <a href="{% url 'list_children' %}" class="btn btn-secondary">View Children</a>
+    </div>
+    <table class="table">
+        <thead>
         <tr>
             <th>Parent's Name</th>
             <th>Street</th>
@@ -14,8 +17,8 @@
             <th>Zip Code</th>
             <th>Actions</th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         {% for parent in parents %}
         <tr>
             <td>{{ parent.first_name }} {{ parent.last_name }}</td>
@@ -29,8 +32,11 @@
             </td>
         </tr>
         {% empty %}
-        <tr><td colspan="6">No parents found.</td></tr>
+        <tr>
+            <td colspan="6">No parents found.</td>
+        </tr>
         {% endfor %}
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
 {% endblock %}
